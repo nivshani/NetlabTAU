@@ -693,6 +693,7 @@ namespace netlab
 
 	void L5_socket_impl::winsock_socket_bind(SOCKET &sd, _In_ const struct sockaddr *name, _In_ int name_len) 
 	{
+
 		if (::bind(sd, name, name_len) == SOCKET_ERROR)
 			throw std::runtime_error("winsock_socket_bind failed with error" + std::to_string(WSAGetLastError()));
 	}

@@ -89,7 +89,10 @@ int L4_TCP::tcpcb::tcpcb_logger::log_number(0);
 
 L4_TCP::tcpcb::tcpcb_logger::tcpcb_logger()
 	: log(std::ofstream(std::string("log/connection_") + std::to_string(log_number++) + std::string(".txt"), std::ios_base::out | std::ios_base::trunc)),
-	start(std::chrono::high_resolution_clock::now()) { }
+	start(std::chrono::high_resolution_clock::now()) 
+{
+  
+}
 
 void L4_TCP::tcpcb::tcpcb_logger::update(u_long snd_cwnd)
 {

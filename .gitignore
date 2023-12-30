@@ -8,7 +8,7 @@
 [Rr]elease10/
 
 # My logs
-log/
+# log/
 
 # doxygen
 def/
@@ -154,6 +154,7 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.vcxproj
 
 # Chutzpah Test files
 _Chutzpah*
