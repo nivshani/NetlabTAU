@@ -45,6 +45,12 @@ public:
 			_inetsw[i] = nullptr;
 	}
 
+	// remove
+	inet_os(const inet_os&)
+	{
+		inet_os();
+	}
+
 	/*!
 	    \fn	inline inet_os::~inet_os()
 	
