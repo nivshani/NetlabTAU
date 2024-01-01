@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
+=======
+# Visual Studio 15
+VisualStudioVersion = 15.0.33423.255
+>>>>>>> master
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetlabTAU", "NetlabTAU.vcxproj", "{F5C5E16F-6274-41BC-8755-AD042AE1C4FD}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -188,6 +193,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<< HEAD
 		SolutionGuid = {4351B345-6CFF-454B-BE2A-82D0F1D44178}
+=======
+		SolutionGuid = {BB7F8028-644B-4027-B408-1C42BBE37536}
+>>>>>>> master
 	EndGlobalSection
 EndGlobal

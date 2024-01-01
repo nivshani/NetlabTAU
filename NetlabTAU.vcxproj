@@ -216,7 +216,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AddressRange.cpp" />
-    <ClCompile Include="BaseTests.cc" />
     <ClCompile Include="CatchMemoryLeak.cpp" />
     <ClCompile Include="inet_os.cpp" />
     <ClCompile Include="IPv4Address.cpp" />

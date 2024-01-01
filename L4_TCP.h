@@ -930,6 +930,10 @@ private:
 	private:
 		typedef std::chrono::duration<double> seconds;
 		tcpcb_logger();
+		tcpcb_logger(const tcpcb_logger&)
+		{
+			tcpcb_logger();
+		}
 		
 		void update(u_long snd_cwnd);
 
