@@ -57,7 +57,7 @@ public:
 	
 	    \brief	flags in inp_flags
 	*/
-	static enum INP_
+	enum INP_
 	{
 		INP_RECVOPTS = 0x01,		/*!< receive incoming IP options */
 		INP_RECVRETOPTS = 0x02,		/*!< receive IP options for reply */
@@ -72,7 +72,7 @@ public:
 	
 	    \brief	Flags passed to in_pcblookup*() functions.
 	*/
-	static enum INPLOOKUP_
+	enum INPLOOKUP_
 	{
 		INPLOOKUP_WILDCARD = 1,	/*!< Allow wildcard sockets. */
 		INPLOOKUP_SETLOCAL = 2  /*!< Use local socket. */
@@ -470,7 +470,7 @@ public:
 	ip_moptions				*inp_moptions;		/*!< IP multicast options */
 
 protected:
-	static enum
+	enum need_to_change_to_var // remove 
 	{
 		IPPORT_USERRESERVED = 5000 /*!< Ports greater this value are reserved for (non-privileged) servers.  */
 	};

@@ -293,7 +293,7 @@ struct L4_TCP::tcphdr
 	
 	    \brief	Flags for TCP header.
 	*/
-	static enum TH_
+	enum TH_
 	{
 		TH_FIN = 0x01,  /*!< The FIN flag */
 		TH_SYN = 0x02,  /*!< The SYN flag */
@@ -567,7 +567,7 @@ private:
 	
 	    \sa	Per RFC793, September, 1981.
 	*/
-	static enum TCPS_
+	enum TCPS_
 	{
 		TCPS_CLOSED = 0,		/*!< closed */
 		TCPS_LISTEN = 1,		/*!< listening for connection */
@@ -594,7 +594,7 @@ private:
 	
 	    \brief	Flags for tcpcb
 	*/
-	static enum TF_
+	enum TF_
 	{
 		TF_ACKNOW = 0x0001,		/*!< ack peer immediately */
 		TF_DELACK = 0x0002,		/*!< ack, but try to delay it */
@@ -613,7 +613,7 @@ private:
 	
 	    \brief	Flags for TCP out-of-band.
 	*/
-	static enum TCPOOB_
+	enum TCPOOB_
 	{
 		TCPOOB_HAVEDATA = 0x01,
 		TCPOOB_HADDATA = 0x02
@@ -932,7 +932,7 @@ private:
 		tcpcb_logger();
 		tcpcb_logger(const tcpcb_logger&)
 		{
-			tcpcb_logger();
+			//tcpcb_logger();
 		}
 		
 		void update(u_long snd_cwnd);
@@ -1005,7 +1005,7 @@ public:
 	    response from the peer.  If, despite the TCPT_KEEP initiated segments we cannot elicit a
 	    response from a peer in TCPT_MAXIDLE amount of time probing, then we drop the connection.
 	*/
-	static enum TCPT_
+	enum TCPT_
 	{
 		TCPT_REXMT = 0,		/*!< retransmit */
 		TCPT_PERSIST = 1,	/*!< retransmit persistence */
@@ -1019,7 +1019,7 @@ public:
 	
 	    \brief	Time constants.
 	*/
-	static enum TCPTV_
+	enum TCPTV_
 	{
 		TCPTV_MSL = 30 * PR_SLOWHZ,		/*!< max seg lifetime (hah!) */
 		
@@ -1048,7 +1048,7 @@ public:
 	    has 3 bits to the right of the binary point, and thus an "ALPHA" of 0.875.  rttvar has 2
 	    bits to the right of the binary point, and is smoothed with an ALPHA of 0.75.
 	*/
-	static enum TCP_
+	enum TCP_
 	{
 		TCP_RTT_SCALE = 8,		/*!< multiplier for srtt; 3 bits frac. */
 		TCP_RTT_SHIFT = 3,		/*!< shift for srtt; 3 bits frac. */
@@ -1056,7 +1056,7 @@ public:
 		TCP_RTTVAR_SHIFT = 2	/*!< multiplier for rttvar; 2 bits */
 	};
 	
-	static enum
+	enum TCP_things // rename
 	{
 		MAX_TCPOPTLEN = 32,	/*!< max # bytes that go in options */
 		/*
@@ -1119,7 +1119,7 @@ private:
 	
 	    \brief	Flags for tcp options.
 	*/
-	static enum TCPO_
+	enum TCPO_
 	{
 		TCPOPT_EOL = 0, /*!< The tcpopt EOL option */
 		TCPOPT_NOP = 1, /*!< The tcpopt nop option */

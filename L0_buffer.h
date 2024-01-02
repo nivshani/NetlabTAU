@@ -39,7 +39,7 @@ class inet_os;
 class L0_buffer 
 {
 public:
-	static enum distribution
+	enum distribution
 	{
 		no_dist,
 		exponential_distribution,
@@ -48,7 +48,7 @@ public:
 		constant
 	};
 
-	static enum DIRECTION
+	enum DIRECTION
 	{
 		INCOMING,
 		OUTGOING,

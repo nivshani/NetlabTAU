@@ -258,7 +258,7 @@ struct	L2_ARP::ether_arp
 		
 		    \brief	Values that represent arphrds (Using only #ARPHRD_ETHER).
 		*/
-		static enum ARPHRD_
+		enum ARPHRD_
 		{
 			ARPHRD_ETHER = 1,	/*!< Ethernet hardware format */
 			ARPHRD_FRELAY = 15	/*!< frame relay hardware format */
@@ -269,7 +269,7 @@ struct	L2_ARP::ether_arp
 		
 		    \brief	Values that represent arp operations.
 		*/
-		static enum ARPOP_
+		enum ARPOP_
 		{
 			ARPOP_REQUEST = 1,		/*!< request to resolve address */
 			ARPOP_REPLY = 2,		/*!< response to previous request */
@@ -524,7 +524,7 @@ public:
 	inline unsigned long long getLaTimeStamp() const;
 
 private:
-	static enum
+	enum time_stamp
 	{
 		MAX_TIME_STAMP = 1500000	/*!<	25 minutes	*/
 	}; 

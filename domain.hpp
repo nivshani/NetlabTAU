@@ -28,12 +28,6 @@ public:
 	
 private:
 
-	/*!
-	    \fn	domain::domain()
-	
-	    \brief	Default constructor.
-	*/
-	domain() { };
 
 	/*!
 	    \fn

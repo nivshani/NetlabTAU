@@ -132,7 +132,7 @@ public:
 	    ETHERTYPE_TRAIL)*512 bytes of data followed by an ETHER type (as given above) and then
 	    the (variable-length) header.
 	*/
-	static enum ETHERTYPE_ 
+	enum ETHERTYPE_ 
 	{
 		ETHERTYPE_PUP = 0x0200,		/*!< PUP protocol */
 		ETHERTYPE_IP = 0x0800,		/*!< IP protocol */
@@ -148,7 +148,7 @@ public:
 	    \brief	Values that represent Ethernet header lengths.
 	*/
 
-	static enum ETH_
+	enum ETH_
 	{
 		ETH_ALEN = 6,			/*!< Octets in one Ethernet addr	 */
 		ETH_HLEN = 14,			/*!< Total octets in header.	 */
@@ -163,7 +163,7 @@ public:
 	
 	    \brief	Values that represent Ethernet addresses lengths.
 	*/
-	static enum ETHER_
+	enum ETHER_
 	{
 		ETHER_ADDR_LEN = ETH_ALEN,							/*!< size of Ethernet addr */
 		ETHER_TYPE_LEN = 2,									/*!< bytes in type field */
@@ -227,7 +227,7 @@ public:
 	
 	    \brief	Global static default parameters.
 	*/
-	static enum L2_DEFAULT
+	enum L2_DEFAULT
 	{
 		ETHERMTU = L2::ether_header::ETH_DATA_LEN,  /*!< The Ethernet MTU */
 		ETHERMIN = (L2::ether_header::ETHER_MIN_LEN - L2::ether_header::ETHER_HDR_LEN - L2::ether_header::ETHER_CRC_LEN),   /*!< The Ethernet minimum size */
@@ -242,7 +242,7 @@ public:
 	    
 	    \note Unused.
 	*/
-	static enum M_
+	enum M_
 	{
 		M_EXT = 0x0001,		/*!< has associated external storage */
 		M_PKTHDR = 0x0002,	/*!< start of record */

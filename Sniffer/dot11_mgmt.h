@@ -507,7 +507,7 @@ public:
         uint8_t quiet_count, quiet_period;
         uint16_t quiet_duration, quiet_offset;
         
-        quiet_type() {}
+        quiet_type() = default;
         
         quiet_type(uint8_t count, uint8_t period, uint16_t duration,
           uint16_t offset)

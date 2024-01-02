@@ -52,8 +52,6 @@ L3_impl::radix_node::radix_node()
 /*                         L3::rtentry	                                */
 /************************************************************************/
 
-L3::rtentry::rtentry() { }
-
 L3::rtentry::rtentry(struct sockaddr *dst, int report, inet_os *inet)
 	: rt_gateway(nullptr), rt_flags(0), rt_refcnt(0), rt_use(0), rt_ifp(inet), rt_genmask(nullptr), rt_llinfo(nullptr), rt_gwroute(nullptr)
 {
@@ -95,14 +93,14 @@ L3::rtentry::rtentry(struct sockaddr *dst, int report, inet_os *inet)
 #endif
 }
 
-L3::rtentry::~rtentry() 
+L3::rtentry::~rtentry()
 {
 	/*register struct ifaddr *ifa;*/
 	rt_refcnt--;
 	if (rt_refcnt <= 0 && (rt_flags & RTF_UP) == 0)
 		if (rt_nodes->rn_flags & (L3_impl::radix_node::RNF_ACTIVE | L3_impl::radix_node::RNF_ROOT))
-			throw std::runtime_error("rtfree 2");
-		else if (rt_refcnt < 0)
+			//Throw std::runtime_error("rtfree 2");  // remove
+		//else if (rt_refcnt < 0)
 			return;
 	
 }
@@ -737,7 +735,7 @@ int L3_impl::ip_output(const struct ip_output_args &args)
 	if (ip->ip_src.s_addr == INADDR_ANY)
 		ip->ip_src = inet.nic()->ip_addr();
 	
-	short m_flags;
+	short m_flags = 0;
 	
 	/*
 	* Look for broadcast address and

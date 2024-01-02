@@ -14,7 +14,6 @@
 
 struct u_char_pack {
 	typedef unsigned char   u_char;
-	u_char_pack() {}
 	u_char_pack(const u_char& lb, const u_char& hb) 
 		: lb(lb & 0x0f), hb(hb & 0xf0) { }
 	
@@ -58,7 +57,7 @@ public:
 	
 	    \brief	Values that represent the index of the protocol in the inet_os::inetsw array.
 	*/
-	static enum SWPROTO_ 
+	enum SWPROTO_ 
 	{
 		SWPROTO_IP = 0,			/*!< IP Protocol  */
 		SWPROTO_UDP = 1,		/*!< UDP Protocol */
@@ -80,7 +79,7 @@ public:
 	    	*	PR_ADDR requires PR_ATOMIC;
 	    	*	PR_ADDR and PR_CONNREQUIRED are mutually exclusive.
 	*/
-	static enum PR_ 
+	enum PR_ 
 	{
 		PR_ATOMIC = 0x01,		/*!< exchange atomic messages only flag */
 		PR_ADDR = 0x02,			/*!< addresses given with messages flag */
@@ -98,7 +97,7 @@ public:
 	    implement, which offers a number of benefits (such as type checking for arguments). These
 	    older constants are still present in order to support TCP debugging.
 	*/
-	static enum PRU_ 
+	enum PRU_ 
 	{
 		PRU_ATTACH = 0,		/*!< The attach protocol to up option */
 		PRU_DETACH = 1,		/*!< The detach protocol from up option */
@@ -131,7 +130,7 @@ public:
 	
 	    \brief	Values that represent the number of times the timer invokes.
 	*/
-	static enum 
+	enum  PR_HZ
 	{
 		PR_SLOWHZ = 2,  /*!< The 2 slow timeouts per second option */
 		PR_FASTHZ = 5   /*!< The 5 slow timeouts per second option */

@@ -48,7 +48,7 @@ public:
 	// remove
 	inet_os(const inet_os&)
 	{
-		inet_os();
+		
 	}
 
 	/*!

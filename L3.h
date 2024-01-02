@@ -196,7 +196,7 @@ public:
 	*/
 	typedef	u_long	n_time;
 
-	static enum 
+	enum ip_things // please rename 
 	{ 	
 		IPVERSION = 4,					/*!< Definitions for internet protocol version 4. \sa Per RFC 791, September 1981 */
 		MAX_IPOPTLEN = 40,				/*!< The actual length of the options (including ipopt_dst). */
@@ -211,7 +211,7 @@ public:
 	
 	    \brief	Definitions for options.
 	*/
-	static enum IPOPT_ 
+	enum IPOPT_ 
 	{
 		IPOPT_EOL = 0,			/*!< end of option list */
 		IPOPT_NOP = 1,			/*!< no operation */
@@ -238,7 +238,7 @@ public:
 	    
 		\see RFC 1108
 	*/
-	static enum IPOPT_SECUR_ 
+	enum IPOPT_SECUR_ 
 	{
 		IPOPT_SECUR_UNCLASS = 0x0000,   /*!< The Security Options for Unclassified option */
 		IPOPT_SECUR_CONFID = 0xf135,	/*!< The Security Options for Confidential option */
@@ -254,7 +254,7 @@ public:
 	
 	    \brief	Internet implementation parameters for Time-To-Live.
 	*/
-	static enum TTL_ 
+	enum TTL_ 
 	{
 		MAXTTL = 255,		/*!< maximum time to live (seconds) */
 		IPDEFTTL = 64,		/*!< default ttl, from RFC 1340 */
@@ -267,7 +267,7 @@ public:
 	
 	    \brief	Flags passed to ip_output as last parameter.
 	*/
-	static enum IP_OUTPUT_ 
+	enum IP_OUTPUT_ 
 	{
 		IP_FORWARDING = 0x1,				/*!< most of ip header exists */
 		IP_RAWOUTPUT = 0x2,					/*!< raw ip header exists */
@@ -321,7 +321,7 @@ public:
 
 			\brief	Index offsets for sockaddr array for alternate internal encoding.
 		*/
-		static enum RTAX_ 
+		enum RTAX_ 
 		{
 			RTAX_DST = 0,		/*!< destination sockaddr present */
 			RTAX_GATEWAY = 1,	/*!< gateway sockaddr present */
@@ -427,7 +427,7 @@ public:
 		
 		    \brief	Flags for #rn_flags.
 		*/
-		static enum RNF_ 
+		enum RNF_ 
 		{
 			RNF_NORMAL = 1,	/*!< leaf contains normal route */
 			RNF_ROOT = 2,	/*!< leaf is root leaf for tree */
@@ -585,7 +585,7 @@ public:
 		
 		    \brief	Flag bits for ipt_flg.
 		*/
-		static enum IPOPT_TS_ 
+		enum IPOPT_TS_ 
 		{
 			IPOPT_TS_TSONLY = 0,	/*!< timestamps only */
 			IPOPT_TS_TSANDADDR = 1,	/*!< timestamps and addresses */
@@ -623,7 +623,7 @@ public:
 	    future.
 	*/
 	struct ipq {
-		static enum 
+		enum ifq_len // rename 
 		{ 
 			IFQ_MAXLEN = 50 /*!< The ifq maxlen */
 		};
@@ -906,7 +906,7 @@ struct L3::iphdr {
 	
 	    \brief	Flags for ip_tos.
 	*/
-	static enum IPTOS_ 
+	enum IPTOS_ 
 	{
 		IPTOS_LOWDELAY = 0x10,				/*!< The ip_tos lowdelay option */
 		IPTOS_THROUGHPUT = 0x08,			/*!< The ip_tos throughput option */
@@ -926,7 +926,7 @@ struct L3::iphdr {
 	
 	    \brief	Flags for ip_off.
 	*/
-	static enum IP_ 
+	enum IP_ 
 	{
 		IP_DF = 0x4000,			/*!< don't fragment flag */
 		IP_MF = 0x2000,			/*!< more fragments flag */
@@ -1063,7 +1063,7 @@ struct L3::rtentry {
 	
 	    \brief	Flags for #rt_flags.
 	*/
-	static enum RTF_ 
+	enum RTF_ 
 	{
 		RTF_UP = 0x1,				/*!< route usable */
 		RTF_GATEWAY = 0x2,			/*!< destination is a gateway */
@@ -1087,7 +1087,7 @@ struct L3::rtentry {
 	
 	    \brief	Flags for #rtm_flags.
 	*/
-	static enum RTM_ 
+	enum RTM_ 
 	{
 		RTM_VERSION = 3,		/*!< Up the ante and ignore older versions */
 		RTM_ADD = 0x1,			/*!< Add Route */
@@ -1112,7 +1112,7 @@ struct L3::rtentry {
 	
 	    \brief	Values that represent rtvs.
 	*/
-	static enum RTV_ 
+	enum RTV_ 
 	{
 		RTV_MTU = 0x1,			/*!< init or lock _mtu */
 		RTV_HOPCOUNT = 0x2,		/*!< init or lock _hopcount */
@@ -1124,12 +1124,7 @@ struct L3::rtentry {
 		RTV_RTTVAR = 0x80		/*!< init or lock _rttvar */
 	};
 
-	/*!
-	    \fn	rtentry();
-	
-	    \brief	Default constructor.
-	*/
-	rtentry();
+
 
 	/*!
 	    \fn	rtentry(struct sockaddr *dst, int report, class inet_os *inet);

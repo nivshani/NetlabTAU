@@ -63,7 +63,7 @@ void L0_buffer::process() {
 	if (reliability < uniform_real_reli(gen))
 	{
 #ifdef NETLAB_L0_DROP_DEBUG
-		std::lock_guard<std::mutex>(cable.inet.print_mutex);
+		std::lock_guard<std::mutex> lock(cable.inet.print_mutex);
 		std::cout << "[#] Packet was dropped!" << std::endl;
 #endif
 		return;
@@ -90,7 +90,7 @@ void L0_buffer::process() {
 	}
 #ifdef NETLAB_L0_DELAY_DEBUG
 	{
-		std::lock_guard<std::mutex>(cable.inet.print_mutex);
+		std::lock_guard<std::mutex> lock(cable.inet.print_mutex);
 		std::cout << "[#] Packet is delayed for: " << delay.count() << " seconds." << std::endl;
 	}
 #endif
