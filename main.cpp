@@ -141,7 +141,7 @@ void test1()
 	inet_client.stop_slowtimo();
 
 	inet_server.stop_fasttimo();
-	inet_server.stop_slowtimo();
+	inet_server.stop_slowtimo();	
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 
 	ListenSocket->shutdown(SD_RECEIVE);
@@ -1854,6 +1854,7 @@ void main()
 	std::cin >> request;
 	while (request)
 	{
+
 		handler(request);
 		std::cout << "Please insert another test number, or 0 to terminate." << std::endl;
 		std::cin >> request;

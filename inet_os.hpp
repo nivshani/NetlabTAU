@@ -45,8 +45,10 @@ public:
 			_inetsw[i] = nullptr;
 	}
 
-	inet_os(const inet_os&) {
-		inet_os();
+	// remove
+	inet_os(const inet_os&)
+	{
+		
 	}
 
 	/*!

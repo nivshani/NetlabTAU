@@ -53,7 +53,7 @@ public:
 
 		\brief	Flags to represent the NIC's status #ifa_flags, legacy support.
 	*/
-	static enum IFF_
+	enum IFF_
 	{
 #ifndef IFF_UP
 		IFF_UP = 0x1,				/*!< interface is up */

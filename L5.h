@@ -77,7 +77,35 @@ namespace netlab
 		
 		    \param [in,out]	inet	The inet.
 		*/
-		L5_socket(inet_os &inet) : inet(inet) { }
+		L5_socket(inet_os &inet) : inet(inet) 
+		{
+            this->so_type = 0;
+            this->so_options = 0;
+            this->so_linger = 0;
+            this->so_state = 0;
+
+            this->so_pcb = nullptr;            
+            this->so_proto = nullptr;
+  
+            this->so_head = nullptr;     
+            this->so_q0 = nullptr;     
+            this->so_q = nullptr;       
+            this->so_q0len = 0;    
+            this->so_qlen = 0;     
+            this->so_qlimit = 0;    
+            this->so_timeo = 0;    
+
+            this->so_error = 0; 
+            this->so_pgid = 0;     
+            this->so_oobmark = 0; 
+
+            this->so_tpcb = nullptr; /*!< Wisc. protocol control block XXX */
+
+            this->upcall = false;           /*!< true to upcall */
+            this->so_upcallarg = nullptr;   /*!< Arg for above */
+
+       
+		}
 
 		/*!
 		    \fn	L5_socket::L5_socket(_In_ int af, _In_ int type, _In_ int protocol, inet_os &inet)
@@ -517,7 +545,7 @@ namespace netlab
 		
 					\brief	Flags for the socket buffer #sb_flags.
 				*/
-				static enum SB_
+				enum SB_
 				{
 					SB_MAX = (256 * 1024),						/*!< default for max chars in sockbuf */
 					SB_LOCK = 0x01,								/*!< lock on data queue */
@@ -545,7 +573,7 @@ namespace netlab
 
 						\brief	Flags for select information
 					*/
-					static enum SI_
+					enum SI_
 					{
 						SI_COLL = 0x0001 /*!< collision occurred */
 					};
@@ -841,7 +869,7 @@ namespace netlab
 		typedef std::condition_variable	cond;
 		typedef std::unique_lock<mutex>	lock;
 
-		static enum SO_
+		enum SO_
 		{
 			SO_REUSEPORT = 0x0200	/*!< allow local address & port reuse */
 		};
@@ -851,7 +879,7 @@ namespace netlab
 		
 		    \brief	Socket state bits.
 		*/
-		static enum SS_
+		enum SS_
 		{
 			SS_NOFDREF = 0x001,	/*!< no file table ref any more */
 			SS_ISCONNECTED = 0x002,	/*!< socket connected to a peer */
@@ -866,7 +894,7 @@ namespace netlab
 			SS_ISCONFIRMING = 0x400		/*!< deciding to accept connection req */
 		};
 
-		static enum MSG_
+		enum MSG_
 		{
 			MSG_EOR = 0x8,						/*!< data completes record */
 			MSG_TRUNC_2 = MSG_TRUNC >> 1,		/*!< data discarded before delivery */
@@ -1071,7 +1099,7 @@ namespace netlab
 		
 		    \brief	Flags for f_flag
 		*/
-		static enum F_
+		enum F_
 		{
 			FREAD = 0x01,   /*!< shut down the read-half of the connection */
 			FWRITE = 0x02,  /*!< shut down the write-half of the connection */
