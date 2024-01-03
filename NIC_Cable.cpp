@@ -68,8 +68,8 @@ bool NIC_Cable::callback(const Tins::PDU &pdu)
 	std::shared_ptr<std::vector<byte>> m(new std::vector<byte>(pdu.size()));
 	netlab::RawData(pdu, m);
 
-#ifndef NIC_CABLE_DEBUG
-#define NIC_CABLE_DEBUG
+
+#ifdef NIC_CABLE_DEBUG
 	{
 		std::lock_guard<std::mutex> lock(inet.print_mutex);
 		std::cout << "[#] New Packet arrived:" << std::endl;
